@@ -1,3 +1,4 @@
+
 # 🎓 College Chatbot (Flask + AI)
 
 A simple AI-powered College Chatbot built using Flask, SQLite, and basic NLP.
@@ -123,3 +124,6 @@ SQLite database (`college_chatbot.db`) with tables:
 ## 👨‍💻 Author
 
 Developed as a mini project for college chatbot system.
+=======
+# chatbot
+
