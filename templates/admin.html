@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEHU Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-overlay"></div>
+
+<div class="admin-wrapper">
+
+    <!-- Header -->
+    <div class="admin-header admin-white-card">
+        <div>
+            <h1>🎛️ GEHU AI Chatbot Admin Panel</h1>
+            <p>Manage FAQs, chatbot data, and student query system</p>
+        </div>
+        <a href="{{ url_for('home') }}" class="back-btn">⬅ Back to Website</a>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="admin-dashboard">
+        <div class="dashboard-card">
+            <h3>📋 Total FAQs</h3>
+            <p>{{ total_faqs }}</p>
+        </div>
+        <div class="dashboard-card">
+            <h3>💬 Total Chats</h3>
+            <p>{{ total_chats }}</p>
+        </div>
+        <div class="dashboard-card">
+            <h3>📂 Categories</h3>
+            <p>{{ total_categories }}</p>
+        </div>
+        <div class="dashboard-card">
+            <h3>🤖 Chatbot Status</h3>
+            <p>Active</p>
+        </div>
+    </div>
+
+    <!-- Add FAQ -->
+    <div class="admin-card admin-white-card">
+        <h2>➕ Add New FAQ</h2>
+
+        <form method="POST" action="{{ url_for('add') }}">
+            <input type="text" name="question" placeholder="Enter Question..." required>
+            <textarea name="answer" placeholder="Enter Answer..." required></textarea>
+
+            <select name="category" required>
+                <option value="">Select Category</option>
+                <option value="Admissions">Admissions</option>
+                <option value="Fees">Fees</option>
+                <option value="Courses">Courses</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Exams">Exams</option>
+                <option value="Campus">Campus</option>
+                <option value="Transport">Transport</option>
+                <option value="Contact">Contact</option>
+                <option value="Scholarship">Scholarship</option>
+                <option value="Placements">Placements</option>
+            </select>
+
+            <button type="submit">Add FAQ</button>
+        </form>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="admin-card admin-white-card">
+        <h2>🔍 Search & Filter FAQs</h2>
+
+        <form method="GET" action="{{ url_for('admin') }}" class="search-form">
+            <input type="text" name="search" placeholder="Search question or answer..." value="{{ search }}">
+
+            <select name="category">
+                <option value="">All Categories</option>
+                <option value="Admissions" {% if category == 'Admissions' %}selected{% endif %}>Admissions</option>
+                <option value="Fees" {% if category == 'Fees' %}selected{% endif %}>Fees</option>
+                <option value="Courses" {% if category == 'Courses' %}selected{% endif %}>Courses</option>
+                <option value="Hostel" {% if category == 'Hostel' %}selected{% endif %}>Hostel</option>
+                <option value="Exams" {% if category == 'Exams' %}selected{% endif %}>Exams</option>
+                <option value="Campus" {% if category == 'Campus' %}selected{% endif %}>Campus</option>
+                <option value="Transport" {% if category == 'Transport' %}selected{% endif %}>Transport</option>
+                <option value="Contact" {% if category == 'Contact' %}selected{% endif %}>Contact</option>
+                <option value="Scholarship" {% if category == 'Scholarship' %}selected{% endif %}>Scholarship</option>
+                <option value="Placements" {% if category == 'Placements' %}selected{% endif %}>Placements</option>
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="admin-card admin-white-card">
+        <h2>📚 Existing FAQs</h2>
+
+        <div class="faq-list">
+            {% for faq in faqs %}
+            <div class="faq-item faq-white-item">
+                <div class="faq-text admin-dark-text">
+                    <strong>Q:</strong> {{ faq[1] }} <br><br>
+                    <strong>A:</strong> {{ faq[2] }} <br><br>
+                    <strong>Category:</strong> {{ faq[3] }}
+                </div>
+
+                <div class="faq-actions">
+                    <a href="{{ url_for('edit', id=faq[0]) }}" class="edit-btn">Edit</a>
+                    <a href="{{ url_for('delete', id=faq[0]) }}" class="delete-btn">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Chat History -->
+    <div class="admin-card admin-white-card">
+        <h2>💬 Recent Chat History</h2>
+
+        <div class="chat-history-list">
+            {% for chat in chats %}
+            <div class="chat-history-item">
+                <p><strong>User:</strong> {{ chat[1] }}</p>
+                <p><strong>Bot:</strong> {{ chat[2] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

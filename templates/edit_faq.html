@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit FAQ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-overlay"></div>
+
+<div class="admin-wrapper">
+    <div class="admin-card admin-white-card">
+        <h2>✏️ Edit FAQ</h2>
+
+        <form method="POST">
+            <input type="text" name="question" value="{{ faq[1] }}" required>
+            <textarea name="answer" required>{{ faq[2] }}</textarea>
+
+            <select name="category" required>
+                <option value="Admissions" {% if faq[3] == 'Admissions' %}selected{% endif %}>Admissions</option>
+                <option value="Fees" {% if faq[3] == 'Fees' %}selected{% endif %}>Fees</option>
+                <option value="Courses" {% if faq[3] == 'Courses' %}selected{% endif %}>Courses</option>
+                <option value="Hostel" {% if faq[3] == 'Hostel' %}selected{% endif %}>Hostel</option>
+                <option value="Exams" {% if faq[3] == 'Exams' %}selected{% endif %}>Exams</option>
+                <option value="Campus" {% if faq[3] == 'Campus' %}selected{% endif %}>Campus</option>
+                <option value="Transport" {% if faq[3] == 'Transport' %}selected{% endif %}>Transport</option>
+                <option value="Contact" {% if faq[3] == 'Contact' %}selected{% endif %}>Contact</option>
+                <option value="Scholarship" {% if faq[3] == 'Scholarship' %}selected{% endif %}>Scholarship</option>
+                <option value="Placements" {% if faq[3] == 'Placements' %}selected{% endif %}>Placements</option>
+            </select>
+
+            <button type="submit">Update FAQ</button>
+        </form>
+
+        <br>
+        <a href="{{ url_for('admin') }}" class="back-btn">⬅ Back to Admin</a>
+    </div>
+</div>
+
+</body>
+</html>

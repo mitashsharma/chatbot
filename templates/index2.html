@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEHU Dehradun | AI Student Assistance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="page-overlay"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-circle">🎓</div>
+            <div>
+                <h2>GEHU Dehradun</h2>
+                <p>AI Student Assistance System</p>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#about-gehu">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#chatbot-section">Chatbot</a>
+            <a href="{{ url_for('admin') }}" class="nav-admin">Admin</a>
+        </div>
+    </nav>
+
+    <div class="site-wrapper">
+
+        <!-- HERO -->
+        <section class="hero-section">
+            <div class="hero-card">
+                <div class="hero-badge">✨ Smart Campus Support</div>
+                <h1>🎓 GEHU Dehradun</h1>
+                <p class="hero-subtitle">AI-Powered Smart Student Assistance System</p>
+
+                <p class="hero-text">
+                    Welcome to <b>Graphic Era Hill University, Dehradun</b>. This smart platform helps students
+                    quickly access information related to admissions, fees, courses, hostel, scholarships,
+                    campus facilities, and academic support.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about-gehu" class="hero-btn primary-btn">Explore University</a>
+                    <a href="#chatbot-section" class="hero-btn secondary-btn">Ask Chatbot</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about-gehu" class="section-card">
+            <div class="section-title">
+                <span>🏫</span>
+                <h2>About Graphic Era Hill University</h2>
+            </div>
+
+            <p class="section-text">
+                Graphic Era Hill University (GEHU) is a reputed private university located in
+                <b>Dehradun, Uttarakhand</b>. It is known for academic excellence, modern infrastructure,
+                professional programs, and student-centered learning.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>📌 Basic Information</h3>
+                    <ul>
+                        <li>Established: <b>2011</b></li>
+                        <li>Type: <b>Private University</b></li>
+                        <li>Location: <b>Dehradun, Uttarakhand</b></li>
+                        <li>Known for: <b>Technology, Management, Science & Research</b></li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>🌄 Campus Highlights</h3>
+                    <ul>
+                        <li>Modern smart classrooms</li>
+                        <li>Computer and research laboratories</li>
+                        <li>Library and digital learning resources</li>
+                        <li> Placement Support</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>📍 Student Support</h3>
+                    <ul>
+                        <li>Academic guidance support</li>
+                        <li>Career and placement awareness</li>
+                        <li>Innovation and project culture</li>
+                        <li>Friendly learning environment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSES -->
+        <section id="courses" class="section-card">
+            <div class="section-title">
+                <span>🎓</span>
+                <h2>Courses Offered</h2>
+            </div>
+
+            <div class="course-grid">
+                <div class="course-card">💻 BCA / BCA with AI & Data Science</div>
+                <div class="course-card">📊 BBA / MBA</div>
+                <div class="course-card">💰 B.Com / M.Com</div>
+                <div class="course-card">🔬 B.Sc / M.Sc</div>
+                <div class="course-card">🖥️ MCA</div>
+                <div class="course-card">⚙️ B.Tech</div>
+                <div class="course-card">⚖️ Law</div>
+                <div class="course-card">💊 Pharmacy</div>
+                <div class="course-card">🎨 Design & Other Programs</div>
+            </div>
+        </section>
+
+        <!-- FACILITIES -->
+        <section id="facilities" class="section-card">
+            <div class="section-title">
+                <span>🏠</span>
+                <h2>Campus Facilities</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>🏡 Student Facilities</h3>
+                    <ul>
+                        <li>Hostel for boys and girls</li>
+                        <li>Mess and cafeteria</li>
+                        <li>Transport support</li>
+                        <li>Student service desk</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>📚 Academic Facilities</h3>
+                    <ul>
+                        <li>Library & reading areas</li>
+                        <li>Computer labs</li>
+                        <li>Project and innovation support</li>
+                        <li>Digital resources</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>⚽ Extra Facilities</h3>
+                    <ul>
+                        <li>Sports activities</li>
+                        <li>Cultural events</li>
+                        <li>Seminars & workshops</li>
+                        <li>Campus engagement programs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORT -->
+        <section class="section-card">
+            <div class="section-title">
+                <span>📞</span>
+                <h2>Student Support & Help</h2>
+            </div>
+
+            <div class="support-grid">
+                <div class="support-card">📝 Admission Process</div>
+                <div class="support-card">💰 Fees Information</div>
+                <div class="support-card">🎓 Scholarships</div>
+                <div class="support-card">🏠 Hostel Details</div>
+                <div class="support-card">📚 Course Information</div>
+                <div class="support-card">🧾 Exam & Academic Queries</div>
+            </div>
+        </section>
+
+        <!-- CHATBOT -->
+        <section id="chatbot-section" class="chatbot-main-section">
+            <div class="chatbot-title-box">
+                <h2>🤖 GEHU Smart Assistant</h2>
+                <p>Ask your university-related questions and get instant answers.</p>
+            </div>
+
+            <div class="chat-container">
+
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <div class="bot-avatar">🤖</div>
+                        <div>
+                            <h2>GEHU AI Chatbot</h2>
+                            <p><span class="online-dot"></span> Online • Ready to help</p>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('admin') }}" class="admin-link">Admin Panel</a>
+                </div>
+
+                <div class="chat-box" id="chat-box">
+                    <div class="bot-message">
+                        <strong>Welcome to GEHU Smart Assistant 👋</strong><br>
+                        Hello! I’m your <b>AI-powered campus chatbot</b> for
+                        <b>Graphic Era Hill University, Dehradun</b>.<br><br>
+
+                        I can help you with:
+                        <ul>
+                            <li>Admissions</li>
+                            <li>Courses</li>
+                            <li>Fees</li>
+                            <li>Scholarships</li>
+                            <li>Hostel</li>
+                            <li>Library & Campus Info</li>
+                        </ul>
+
+                        Try asking <b>“What courses are offered?”</b> 😊
+                    </div>
+                </div>
+
+                <div class="quick-buttons">
+                    <button onclick="sendQuick('Hi')">Hi</button>
+                    <button onclick="sendQuick('What courses are offered?')">Courses</button>
+                    <button onclick="sendQuick('What is the admission process?')">Admission</button>
+                    <button onclick="sendQuick('What are the fees for BCA?')">Fees</button>
+                    <button onclick="sendQuick('What are the hostel facilities?')">Hostel</button>
+                    <button onclick="sendQuick('Where is the library?')">Library</button>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <span class="input-icon">💬</span>
+                        <input type="text" id="user-input" placeholder="Ask your GEHU query here..." />
+                    </div>
+                    <button onclick="sendMessage()" class="send-btn">Send 🚀</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-box">
+                <h3>🎓 GEHU Smart Student Assistance System</h3>
+
+                <p class="footer-credit">Developed for Graphic Era Hill University, Dehradun</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
