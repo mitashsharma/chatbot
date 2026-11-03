@@ -1,5 +1,5 @@
 
-# 🎓 College Chatbot (Flask + AI)
+# 🎓 College Chatbot
 
 A simple AI-powered College Chatbot built using Flask, SQLite, and basic NLP.
 It helps students get information about admissions, fees, courses, hostel, exams, and more.
