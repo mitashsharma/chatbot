@@ -51,8 +51,8 @@ college_chatbot_project/
 ### 1. Clone or Download Project
 
 ```
-git clone <your-repo-link>
-cd college_chatbot_project
+git clone <https://github.com/mitashsharma/chatbot.git>
+cd chatbot
 ```
 
 ### 2. Install Dependencies
